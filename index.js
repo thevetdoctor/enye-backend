@@ -5,6 +5,12 @@ const router = require('./routes/index');
 // Declare PORT
 const PORT = process.env.PORT || 5000;
 
+// Set CORS middleware
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+});
+
 // Route handling
 app.use('/api', router);
 

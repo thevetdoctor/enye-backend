@@ -36,7 +36,7 @@ router.get('/rates', async(req, res) => {
         });
     } catch(e) {
         // if error in API response, return error
-        console.log(e);
+        console.log(e.message);
         return res.json({error: 'Error in fetching rates'});
     }
 
